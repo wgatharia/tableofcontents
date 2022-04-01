@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.14.0",
+    "libraryName": "table-of-contents",
+    "libraryId": "ff4a6b6f-3e54-49af-b4be-de19bba7ced5",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "table-of-contents",
+    "solutionShortDescription": "table-of-contents description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

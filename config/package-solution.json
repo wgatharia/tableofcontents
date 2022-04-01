@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "table-of-contents-client-side-solution",
+    "id": "ff4a6b6f-3e54-49af-b4be-de19bba7ced5",
+    "version": "1.0.0.1",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.14.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Table of Contents WebPart Solution"
+      },
+      "longDescription": {
+        "default": "Table of Contents WebPart provides links to Sites user has access."
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "table-of-contents Feature",
+        "description": "The feature that activates elements of the Table of Contents solution.",
+        "id": "9fb48996-cf7a-42eb-b3cb-c7bde68cf6fd",
+        "version": "1.0.0.1"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/table-of-contents.sppkg"
+  }
+}
