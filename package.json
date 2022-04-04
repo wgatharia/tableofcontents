@@ -3,10 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "main": "lib/index.js",
+  "description": "This project replicates the traditional SharePoint Table of Contents WebPart.",
   "scripts": {
     "build": "gulp bundle",
     "clean": "gulp clean",
     "test": "gulp test"
+  },
+  "author": {
+    "name": "William Gatharia"
   },
   "dependencies": {
     "@microsoft/rush-stack-compiler-4.2": "^0.1.2",

@@ -9,6 +9,7 @@ define([], function() {
     "AppTeamsTabEnvironment": "The app is running in Microsoft Teams",
     "TocSourceFieldLabel": "Select a Table of Contents Source",
     "SortByFieldLabel": "Sort by",
-    "SortOrderLabel": "Select the Sort order"
+    "SortOrderLabel": "Select the Sort order",
+    "RowLimitLabel": "Slide to adjust the number of Sites/ Webs to display."
   }
 });

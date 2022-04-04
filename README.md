@@ -25,14 +25,13 @@ Short summary on functionality and used technologies.
 
 Solution|Author(s)
 --------|---------
-folder name | Author details (name, company, twitter alias with link)
+tableofcontents | William Gatharia, Software Engineer.
 
 ## Version history
 
 Version|Date|Comments
 -------|----|--------
-1.1|March 10, 2021|Update comment
-1.0|January 29, 2021|Initial release
+1.0|April 01, 2022|Initial release
 
 ## Disclaimer
 

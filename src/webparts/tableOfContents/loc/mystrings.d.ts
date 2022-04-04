@@ -9,6 +9,7 @@ declare interface ITableOfContentsWebPartStrings {
   TocSourceFieldLabel: string;
   SortByFieldLabel: string;
   SortOrderLabel: string;
+  RowLimitLabel: string;
 }
 
 declare module 'TableOfContentsWebPartStrings' {

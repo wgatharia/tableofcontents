@@ -1,7 +1,7 @@
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField,
+  PropertyPaneSlider,
   PropertyPaneToggle,
   PropertyPaneChoiceGroup,
   PropertyPaneDropdown
@@ -30,6 +30,7 @@ export interface ITableOfContentsWebPartProps {
   tocSource: string;
   sortBy: string;
   sortOrder: number;
+  rowLimit: number;
 }
 
 export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITableOfContentsWebPartProps> {
@@ -61,7 +62,8 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
     if(isHubSite) {
       DepartmentId = siteId;
     }
-
+    // The source of Sites to List is either a Hub or List Subwebs on a Site.
+    // For a Hub use Search to filter by Department Id ( Hub Site Id ).
     if(this.properties.tocSource === 'Hub') {
       let queryTemplate = `{searchterms} ((contentclass=STS_Site OR contentclass=STS_Web) AND NOT (IsHubSite:true)) (DepartmentId:${DepartmentId} OR DepartmentId:{${DepartmentId}})`;
 
@@ -70,8 +72,8 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
       const appSearchSettings: ISearchQuery = {
         QueryTemplate: queryTemplate,
         ClientType: "Custom",
-        RowLimit: 10,
-        RowsPerPage:10,        
+        RowLimit: this.properties.rowLimit,
+        RowsPerPage:this.properties.rowLimit,        
         SelectProperties: ["ContentType","ContentTypeId","Title","SiteName","SiteTitle","SPWebUrl", "WebPath","PreviewUrl","IconUrl","ClassName","LastModifiedTime"],
         Properties: [],
         SortList: [{Property: `${this.properties.sortBy}`, Direction: this.properties.sortOrder}],
@@ -204,6 +206,14 @@ export default class TableOfContentsWebPart extends BaseClientSideWebPart<ITable
                     { key: 1, text: "Descending"}
                   ],
                   selectedKey: 0
+                }),
+                PropertyPaneSlider("rowLimit", {
+                  label: strings.RowLimitLabel,
+                  min: 10,
+                  max: 50,
+                  value: 10,
+                  showValue: true,
+                  step: 5
                 }) 
               ]
             }
